@@ -58,4 +58,19 @@ class ReportsTest extends TestCase
         $response->assertOk();
         $response->assertHeader('content-type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
     }
+
+    public function test_can_queue_daily_email_report(): void
+    {
+        $token = $this->authenticate();
+        $date = $this->seedAttendance();
+
+        $response = $this->withHeader('Authorization', 'Bearer '.$token)
+            ->postJson('/api/reports/attendance/daily/email?date='.$date);
+
+        $response->assertOk()
+            ->assertJson([
+                'message' => "The daily attendance report for {$date} has been queued for delivery to: ".User::first()->email,
+                'status' => 200
+            ]);
+    }
 }

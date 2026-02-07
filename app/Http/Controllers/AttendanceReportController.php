@@ -135,7 +135,8 @@ class AttendanceReportController extends Controller
         Mail::to($user->email)->queue(new DailyAttendanceReportMail($date));
 
         return response()->json([
-            'message' => "The daily attendance report for {$date} has been queued for delivery to: {$user->email}"
+            'message' => "The daily attendance report for {$date} has been queued for delivery to: {$user->email}",
+            'status' => 200
         ]);
     }
 }
