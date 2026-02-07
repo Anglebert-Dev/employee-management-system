@@ -1,0 +1,41 @@
+# Sensitive Configuration and Data
+/.env
+/.env.*
+/.env.backup
+/.env.production
+/auth.json
+/aam
+/database/*.sqlite
+/database/*.db
+/*.sqlite
+/*.db
+
+# Developer Scripts and Logs
+/test_*.php
+/register_user.php
+/composer_error.log
+/*.log
+.phpunit.result.cache
+
+# Dependencies and Build
+/node_modules/
+/vendor/
+/public/build/
+/public/hot/
+/public/storage
+
+# Storage and Cache
+/storage/*.key
+/storage/pail
+/.phpunit.cache/
+/.fleet/
+/.idea/
+/.nova/
+/.vscode/
+/.zed/
+
+# System Files
+.DS_Store
+Thumbs.db
+Homestead.json
+Homestead.yaml
