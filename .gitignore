@@ -1,6 +1,5 @@
 # Sensitive Configuration and Data
 /.env
-/.env.*
 /.env.backup
 /.env.production
 /auth.json
