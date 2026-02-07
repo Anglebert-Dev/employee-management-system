@@ -22,10 +22,17 @@ jobs:
         php: [8.2, 8.3, 8.4]
 
     name: PHP ${{ matrix.php }}
+    
+    env:
+      WKHTML_PDF_BINARY: /usr/bin/wkhtmltopdf
+      WKHTML_IMG_BINARY: /usr/bin/wkhtmltoimage
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
+
+      - name: Install system dependencies
+        run: sudo apt-get update && sudo apt-get install -y wkhtmltopdf xvfb
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
