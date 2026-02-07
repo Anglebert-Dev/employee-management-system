@@ -95,7 +95,10 @@ class AuthTest extends TestCase
             'password_confirmation' => 'new-password-123',
         ]);
 
-        $response->assertStatus(200);
+        $response->assertOk()->assertJson([
+            'message' => __('passwords.reset'),
+            'status' => 200
+        ]);
         $this->assertTrue(Hash::check('new-password-123', $user->fresh()->password));
     }
 }
