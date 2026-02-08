@@ -45,8 +45,8 @@ A professional, industrial-grade **Employee Management & Attendance System** bui
 
 ### 2. Clone & Install
 ```bash
-git clone https://github.com/TETA-Liana/employee-manager.git
-cd employee-manager
+git clone https://github.com/Anglebert-Dev/employee-management-system
+cd employee-management-system
 composer install
 ```
 
